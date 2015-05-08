@@ -10,25 +10,20 @@ namespace matlog
         private Dictionary<string, bool> variables;
         public int error;
 
-
         public Formula()
         {
             variables = new Dictionary<string, bool>();
             error = 0;
-
         }
 
-        public void SetVariable(string Name, bool Value)
+        public void SetVariable(string name, bool value)
         {
-            variables.Add(Name, Value);
+            variables.Add(name, value);
         }
-
-
 
         public Result Operate(string s)
         {
-
-            Result result = Equiv(s);
+            var result = Equiv(s);
             //variables.Remove("X");
             //variables.Remove("Y");
             //variables.Remove("Z");
@@ -36,10 +31,7 @@ namespace matlog
             variables.Remove("y");
             variables.Remove("z");
             return result;
-
         }
-
-        /// ///////////////////////////////////////////////////////////////////////////////
 
         private Result Equiv(string s)
         {
@@ -54,20 +46,14 @@ namespace matlog
 
                 current = Implic(next);
                 acc = acc == current.acc;
-
             }
             return new Result(acc, current.rest);
         }
 
-
-        /// ///////////////////////////////////////////////////////////////////////////////
-
         private Result Bracket(string s)
         {
-
             if ((s.Length != 0) && (s[0] == '('))
             {
-
                 var r = Equiv(s.Substring(1));
                 if ((r.rest.Length != 0) && (r.rest[0] == ')'))
                 {
@@ -83,11 +69,9 @@ namespace matlog
             return Variable(s);
         }
 
-        /// ///////////////////////////////////////////////////////////////////////////////
-
         private Result Variable(string s)
         {
-            string f = "";
+            var f = "";
 
             // ищем название функции или переменной
             // имя обязательно должна начинаться с буквы
@@ -95,50 +79,38 @@ namespace matlog
             {
                 f += s[0];
                 bool value;
-                if (variables.TryGetValue(f, out value) == true)
+                if (variables.TryGetValue(f, out value))
                     return new Result(variables[f], s.Substring(1));
-                else
-                {
-                    error = 2;
-                    return new Result(false, "");
-                }
-            }
-            ////////////////////////////////////////////////////////////////////////////////
-            else
-            {
-                error = 3;
+                error = 2;
                 return new Result(false, "");
             }
+
+            error = 3;
+            return new Result(false, "");
             /* error = true;
              return new Result(false, "");*/
         }
 
-        /// ///////////////////////////////////////////////////////////////////////////////
-
         private Result Implic(string s)
         {
             //Result current = Bracket(s);
-            Result current = Or(s);
-            bool acc = current.acc;
+            var current = Or(s);
+            var acc = current.acc;
 
             while (current.rest.Length > 1)
             {
                 if (!((current.rest[0] == '-') && (current.rest[1] == '>'))) break;
 
-
-                string next = current.rest.Substring(2);
+                var next = current.rest.Substring(2);
 
                 current = Or(next);
-                if ((acc == true) && (current.acc == false))
+                if (acc && !current.acc)
                     acc = false;
                 else
                     acc = true;
-
             }
             return new Result(acc, current.rest);
         }
-
-        /// ///////////////////////////////////////////////////////////////////////////////
 
         private Result Or(string s)
         {
@@ -150,8 +122,6 @@ namespace matlog
             {
                 if (current.rest[0] != 'V') break;
 
-
-
                 var next = current.rest.Substring(1);
 
                 current = And(next);
@@ -160,8 +130,6 @@ namespace matlog
             }
             return new Result(acc, current.rest);
         }
-
-        /// ///////////////////////////////////////////////////////////////////////////////
 
         private Result And(string s)
         {
@@ -177,12 +145,9 @@ namespace matlog
 
                 current = No(next);
                 acc = acc && current.acc;
-
             }
             return new Result(acc, current.rest);
         }
-
-        /// ///////////////////////////////////////////////////////////////////////////////
 
         private Result No(string s)
         {
@@ -195,7 +160,6 @@ namespace matlog
             }
             else
                 current = Bracket(s);
-
 
             var acc = current.acc;
 
@@ -211,10 +175,7 @@ namespace matlog
                 current = Bracket(next);
                 acc = !current.acc;
                 current = new Result(acc, current.rest);
-
             }
-
         }
-
     }
 }

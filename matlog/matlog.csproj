@@ -88,7 +88,7 @@
     <Compile Include="Qwain.aspx.designer.cs">
       <DependentUpon>Qwain.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Rand.cs" />
+    <Compile Include="Classes\RandFunq.cs" />
     <Compile Include="Classes\Result.cs" />
     <Compile Include="SDNF.aspx.cs">
       <DependentUpon>SDNF.aspx</DependentUpon>

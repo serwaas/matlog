@@ -30,7 +30,7 @@ namespace matlog
             TextBox2.Visible = true;
             Label1.Visible = true;
             Button2.Visible = true;
-            TextBox1.Text = Rand.operat(RadioButtonList2.SelectedValue, "3");//(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);
+            TextBox1.Text = RandFunq.Operate(RadioButtonList2.SelectedValue, "3");//(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);
         }
 
         protected void Button2_Click(object sender, EventArgs e)

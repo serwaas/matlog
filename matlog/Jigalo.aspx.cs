@@ -17,11 +17,11 @@ namespace matlog
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            var rnd=new Random();
+            var rnd = new Random();
             var s1 = "";
             if (RadioButtonList3.SelectedValue == "1")//vector
             {
-                s1 = Rand.operat(RadioButtonList2.SelectedValue, "3");
+                s1 = RandFunq.Operate(RadioButtonList2.SelectedValue, "3");
             }
             else
             {
@@ -106,7 +106,7 @@ namespace matlog
             else
                 s1 = TextBox1.Text;
             var pol = new Poli();
-            s1 = pol.operate(s1);
+            s1 = pol.Operate(s1);
             var answer = TextBox2.Text;
             var splitAnswer = answer.Split(' ', '+').Where(w => w != "").Select(ww=>ww.ToLower()).ToArray();
             var splitS1 = s1.Split('+', ' ').Where(w => w != "").ToArray();

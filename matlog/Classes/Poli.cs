@@ -7,46 +7,44 @@ namespace matlog
 {
     public  class Poli
     {
-        public string[] polinom ;
-        int[] answerJigolo;
+        public string[] polinom;
+        
 
         public Poli()
         {
             polinom = new string[8] { "xyz", "xy", "xz", "yz", "x", "y", "z", "1" };
-            answerJigolo = new int[8];
+           
         }
-        public  string operate(string s)
+        public  string Operate(string vector)
         {
-            var a = new int[8];
-            for (int i = 0; i < 8; i++)
-                a[i] = Convert.ToInt32(s[i])%2;
-
-            answerJigolo[7] = a[0];
-            answerJigolo[6] = answerJigolo[7] + a[1];
-            answerJigolo[5] = answerJigolo[7] + a[2];
-            answerJigolo[4] = answerJigolo[7] + a[4];
-            answerJigolo[3] = answerJigolo[7] + answerJigolo[6] + answerJigolo[5] + a[3];
-            answerJigolo[2] = answerJigolo[4] + answerJigolo[6] + a[5];
-            answerJigolo[1] = answerJigolo[4] + answerJigolo[5] + a[6];
-            answerJigolo[0] = answerJigolo[1] + answerJigolo[2] + answerJigolo[3] + answerJigolo[4] + answerJigolo[5] +
-                              answerJigolo[6] + answerJigolo[7] + a[7];
-
-
-            for (var i = 0; i < 8; i++)
-            {
-                answerJigolo[i] = (answerJigolo[i] % 2);
-            }
+            var сoefficients = CalculateCoefficients(vector);
             var result = "";
             for (var i = 0; i < 8; i++)
-            {
-                if (answerJigolo[i] != 0)
+                if (сoefficients[i] != 0)
                     result += polinom[i] + "+";
 
-            }
-            result = result.Length != 0 ? result.Substring(0, result.Length - 1) : "0";
-                
+            return result.Length != 0 ? result.Substring(0, result.Length - 1) : "0";
+        }
+
+        private int[] CalculateCoefficients(string s)
+        {
+            var a = new int[8];
+            a = s.Select(w => Convert.ToInt32(w)%2).ToArray();
+            //for (var i = 0; i < 8; i++)
+            //    a[i] = Convert.ToInt32(s[i])%2;
+            var coeff = new int[8];
+            coeff[7] = a[0];
+            coeff[6] = coeff[7] + a[1];
+            coeff[5] = coeff[7] + a[2];
+            coeff[4] = coeff[7] + a[4];
+            coeff[3] = coeff[7] + coeff[6] + coeff[5] + a[3];
+            coeff[2] = coeff[4] + coeff[6] + a[5];
+            coeff[1] = coeff[4] + coeff[5] + a[6];
+            coeff[0] = coeff[1] + coeff[2] + coeff[3] + coeff[4] + coeff[5] +
+                             coeff[6] + coeff[7] + a[7];
+
+            return coeff.Select(c => c%2).ToArray();
             
-            return result;
         }
     }
 }

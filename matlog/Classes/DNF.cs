@@ -7,7 +7,7 @@ namespace matlog
 {
     static public class DNF
     {
-        static public string SDNF(int lenght, string s)
+        static public string SDNF(int lenght, string vector)
         {
             var sdnf = "";
 
@@ -17,7 +17,7 @@ namespace matlog
             var t = false;
             for (var i = 0; i < lenght; i++)
             {
-                if (s[i] == '1')
+                if (vector[i] == '1')
                 {
                     if (x == false)
                         sdnf += "!x";
@@ -59,14 +59,12 @@ namespace matlog
                             z = !z;
                         t = !t;
                     }
-
-
                 }
-            
 
             return sdnf.Substring(0, sdnf.Length - 3);
         }
-        static public string SCNF(int lenght, string s)
+
+        static public string SCNF(int lenght, string vector)
         {
             var scnf = "";
 
@@ -76,7 +74,7 @@ namespace matlog
             var t = false;
             for (var i = 0; i < lenght; i++)
             {
-                if (s[i] == '0')
+                if (vector[i] == '0')
                 {
                     scnf += "(";
                     if (x == false)
@@ -121,12 +119,8 @@ namespace matlog
                             z = !z;
                         t = !t;
                     }
-
-
-                
             }
             return scnf;
         }
-
     }
 }

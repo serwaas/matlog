@@ -31,6 +31,7 @@ namespace matlog
             }
             funq = f;
         }
+
         public Funq(Funq other)
         {
             perem = new string[other.perem.Length];
@@ -46,7 +47,7 @@ namespace matlog
             funq = other.funq;
         }
 
-        public void delPer(int p)
+        public void DelPer(int p)
         {
             var newPerem = new string[perem.Length - 1];
 

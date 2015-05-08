@@ -9,13 +9,13 @@ namespace matlog
     {
 
         public bool acc;
-        public String rest;
+        public string rest;
         //public bool err;
 
-        public Result(bool v, String r)
+        public Result(bool v, string r)
         {
-            this.acc = v;
-            this.rest = r;
+            acc = v;
+            rest = r;
             // this.err = false;
         }
 
