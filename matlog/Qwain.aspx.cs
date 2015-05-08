@@ -42,7 +42,7 @@ namespace matlog
                                       "MSGbox", script, true);
                 return;
             }
-            var MQ = new MinQwain();
+            var mq = new MinQwain();
             Y =  new int[16];
             var isCorrect=true;
             var input = TextBox1.Text;
@@ -69,9 +69,8 @@ namespace matlog
                 return;
             }
 
-            var s = MQ.Minimize(Y);
-            
-            var j = 0;
+            var s = mq.Minimize(Y);
+
             var answer = TextBox2.Text;
             var splitAnswer =  answer.Split(' ','v', 'V').Where(w=>w!="").Select(ww=>ww.ToLower()).ToArray();
             

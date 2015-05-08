@@ -37,15 +37,14 @@ namespace matlog
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string s;
-            int err = 0;
-            s = TextBox1.Text;
-            int length = s.Length;
+            var err = 0;
+            var s = TextBox1.Text;
+            var length = s.Length;
             string script;
-            string answer = TextBox2.Text;
+            var answer = TextBox2.Text;
             if ((length == 8) || (length == 16))
             {
-                for (int i = 0; i < length; i++)
+                for (var i = 0; i < length; i++)
                 {
                     if (!((s[i] == '0') || (s[i] == '1')))
                         err = 1;
@@ -54,32 +53,31 @@ namespace matlog
             else
                 err = 2;
             
-            if (err == 1)
+            switch (err)
             {
-                script = "alert(\"Вектор должен состоять из '0' и '1'\");";
+                case 1:
+                    script = "alert(\"Вектор должен состоять из '0' и '1'\");";
 
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "MSGbox", script, true);
-                return;
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                        "MSGbox", script, true);
+                    return;
+                case 2:
+                    script = "alert(\"Неверная длина исходного вектора\");";
+
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                        "MSGbox", script, true);
+                    return;
             }
-            if (err == 2)
-            {
-                script = "alert(\"Неверная длина исходного вектора\");";
 
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                      "MSGbox", script, true);
-                return;
-            }
 
-           
             var sdnf = DNF.SDNF(length, s);
-            var SplitScnf = sdnf.Split(' ', 'v').Where(w => w != "").ToArray();
+            var splitScnf = sdnf.Split(' ', 'v').Where(w => w != "").ToArray();
             //string SCNF = DNF.SCNF(length, s);
             var splitAnswer = answer.Split(' ','v','V').Where(w => w != "").Select(ww=>ww.ToLower()).ToArray();
-            var isCorrect = splitAnswer.Length == SplitScnf.Length;
+            var isCorrect = splitAnswer.Length == splitScnf.Length;
 
             if (isCorrect)
-                foreach (var str in splitAnswer.Where(str => SplitScnf.All(w => w != str)))
+                foreach (var str in splitAnswer.Where(str => splitScnf.All(w => w != str)))
                     isCorrect = false;
             
             script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";

@@ -35,53 +35,20 @@ namespace matlog
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string s = TextBox1.Text;
-            Formula ta = new Formula();
+            var s = TextBox1.Text;
+            var ta = new Formula();
 
-            string s1 = "";
+            var s1 = "";
            // if (RadioButtonList1.SelectedValue == "2")
-            for (int x = 0; x < 2; x++)
-                for (int y = 0; y < 2; y++)
-                    for (int z = 0; z < 2; z++)
+            for (var x = 0; x < 2; x++)
+                for (var y = 0; y < 2; y++)
+                    for (var z = 0; z < 2; z++)
                     {
+                        ta.SetVariable("x", x != 0);
+                        ta.SetVariable("y", y != 0);
+                        ta.SetVariable("z", z != 0);
 
-                        if (x == 0)
-                        {
-                           // ta.SetVariable("X", false);
-                            ta.SetVariable("x", false);
-                        }
-                        else
-                        {
-                            //ta.SetVariable("X", true);
-                            ta.SetVariable("x", true);
-                        }
-                        if (y == 0)
-                        {
-                            //ta.SetVariable("Y", false);
-                            ta.SetVariable("y", false);
-                        }
-                        else
-                        {
-                            //ta.SetVariable("Y", true);
-                            ta.SetVariable("y", true);
-                        }
-                        if (z == 0)
-                        {
-                            //ta.SetVariable("Z", false);
-                            ta.SetVariable("z", false);
-                        }
-                        else
-                        {
-                            //ta.SetVariable("Z", true);
-                            ta.SetVariable("z", true);
-                        }
-
-                        if (ta.Operate(s).acc == false)
-                            s1 += "0";
-                        else
-                            s1 += "1";
-
-
+                        s1 += ta.Operate(s).acc == false ? "0" : "1";
                     }
             //else
             //    for (int x = 0; x < 2; x++)
@@ -124,26 +91,29 @@ namespace matlog
             var count = Math.Pow(2,3);//Convert.ToInt32(RadioButtonList1.SelectedValue));
             if (answer.Length == count)
             {
-                for (int i = 0; i < count; i++)
+                for (var  i = 0; i < count; i++)
                     if (answer[i] != s1[i])
-
                         err = 1;
             }
             else
                 err = 2;
-            string script="";
-            if (err==0)
-                script = "alert(\"Все верно\");";
-             if (err == 2)
-                script = "alert(\"Неверная длина вектора\");";
-            if (err == 1)
-                script = "alert(\"Неправильно :(\");";
+            var script="";
+            switch (err)
+            {
+                case 0:
+                    script = "alert(\"Все верно\");";
+                    break;
+                case 1:
+                    script = "alert(\"Неправильно :(\");";
+                    break;
+                case 2:
+                    script = "alert(\"Неверная длина вектора\");";
+                    break;
+
+            }
+            
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);
-            
-           
-            
-
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)

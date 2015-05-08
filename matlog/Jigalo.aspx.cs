@@ -63,44 +63,11 @@ namespace matlog
                     for (var y = 0; y < 2; y++)
                         for (var z = 0; z < 2; z++)
                         {
+                            ta.SetVariable("x", x != 0);
+                            ta.SetVariable("y", y != 0);
+                            ta.SetVariable("z", z != 0);
 
-                            if (x == 0)
-                            {
-                                //ta.SetVariable("X", false);
-                                ta.SetVariable("x", false);
-                            }
-                            else
-                            {
-                                //ta.SetVariable("X", true);
-                                ta.SetVariable("x", true);
-                            }
-                            if (y == 0)
-                            {
-                                //ta.SetVariable("Y", false);
-                                ta.SetVariable("y", false);
-                            }
-                            else
-                            {
-                                //ta.SetVariable("Y", true);
-                                ta.SetVariable("y", true);
-                            }
-                            if (z == 0)
-                            {
-                                //ta.SetVariable("Z", false);
-                                ta.SetVariable("z", false);
-                            }
-                            else
-                            {
-                                //ta.SetVariable("Z", true);
-                                ta.SetVariable("z", true);
-                            }
-
-                            if (ta.Operate(s).acc == false)
-                                s1 += "0";
-                            else
-                                s1 += "1";
-
-
+                            s1 += ta.Operate(s).acc == false ? "0" : "1";
                         }
             }
             else

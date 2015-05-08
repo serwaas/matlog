@@ -16,17 +16,14 @@ namespace matlog
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            string s1 = "";
+            var rnd = new Random();
+            var s1 = "";
 
-            for (int i = 0; i < 8; i++)
+            for (var i = 0; i < 8; i++)
             {
-                if (rnd.Next(2) == 1)
-                    s1 += "1";
-                else s1 += "0";
+                s1 += rnd.Next(2) == 1 ? "1" : "0";
             }
 
-            
             TextBox1.Text = s1;
             TextBox1.Visible = true;
             TextBox2.Visible = true;
