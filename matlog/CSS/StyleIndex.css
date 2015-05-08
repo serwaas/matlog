@@ -1,0 +1,53 @@
+﻿
+
+body {
+    
+    width:500px;
+    height:1000px;
+    margin:0 auto;
+    /*padding:20px;*/
+    background-color:#dadada;
+}
+
+
+
+a{
+text-decoration:none;
+}
+
+#head{
+    width:500px;
+    height:1000px;
+    /*margin:0 auto;*/
+    padding:20px;
+    background-color:rgba(170, 170, 170, 0.70);
+
+}
+.but, .but:visited, .but:link  {
+    width:400px;
+	color:#1a419f;
+	font-family:'Comic Sans MS';
+	font-size:20px;
+	
+    
+	background-color:#cccccc;
+	padding:10px;
+    margin:0 auto;
+	border:1px solid #666666; }
+.but:hover {
+	color:#1a419f;
+	font-family:'Comic Sans MS';
+	font-size:20px;
+	text-decoration:none;
+	background-color:#aaaaaa;
+	padding:10px;
+	border:1px solid #666666; }
+
+.but:active {
+	color:#08217b;
+	font-family:'Comic Sans MS';
+	font-size:19px;
+	text-decoration:none;
+	background-color:#aaaaaa;
+	padding:10px;
+	border:1px solid #dadada; }
