@@ -66,32 +66,32 @@ namespace matlog
 
                             if (x == 0)
                             {
-                                ta.SetVariable("X", false);
+                                //ta.SetVariable("X", false);
                                 ta.SetVariable("x", false);
                             }
                             else
                             {
-                                ta.SetVariable("X", true);
+                                //ta.SetVariable("X", true);
                                 ta.SetVariable("x", true);
                             }
                             if (y == 0)
                             {
-                                ta.SetVariable("Y", false);
+                                //ta.SetVariable("Y", false);
                                 ta.SetVariable("y", false);
                             }
                             else
                             {
-                                ta.SetVariable("Y", true);
+                                //ta.SetVariable("Y", true);
                                 ta.SetVariable("y", true);
                             }
                             if (z == 0)
                             {
-                                ta.SetVariable("Z", false);
+                                //ta.SetVariable("Z", false);
                                 ta.SetVariable("z", false);
                             }
                             else
                             {
-                                ta.SetVariable("Z", true);
+                                //ta.SetVariable("Z", true);
                                 ta.SetVariable("z", true);
                             }
 

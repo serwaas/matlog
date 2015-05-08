@@ -43,7 +43,7 @@ namespace matlog
                     result += polinom[i] + "+";
 
             }
-            result = result.Length != 0 ? result.Substring(0, result.Length - 3) : "0";
+            result = result.Length != 0 ? result.Substring(0, result.Length - 1) : "0";
                 
             
             return result;

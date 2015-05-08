@@ -29,9 +29,9 @@ namespace matlog
         {
 
             Result result = Equiv(s);
-            variables.Remove("X");
-            variables.Remove("Y");
-            variables.Remove("Z");
+            //variables.Remove("X");
+            //variables.Remove("Y");
+            //variables.Remove("Z");
             variables.Remove("x");
             variables.Remove("y");
             variables.Remove("z");
