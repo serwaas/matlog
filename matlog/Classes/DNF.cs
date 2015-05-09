@@ -19,24 +19,12 @@ namespace matlog
             {
                 if (vector[i] == '1')
                 {
-                    if (x == false)
-                        sdnf += "!x";
-                    else
-                        sdnf += "x";
-                    if (y == false)
-                        sdnf += "!y";
-                    else
-                        sdnf += "y";
-                    if (z == false)
-                        sdnf += "!z";
-                    else
-                        sdnf += "z";
+                    sdnf += x == false ? "!x" : "x";
+                    sdnf += y == false ? "!y" : "y";
+                    sdnf += z == false ? "!z" : "z";
                     if (lenght == 16)
                     {
-                        if (t == false)
-                            sdnf += "!t";
-                        else
-                            sdnf += "t";
+                        sdnf += t == false ? "!t" : "t";
                     }
 
                     sdnf += " v ";
@@ -77,25 +65,13 @@ namespace matlog
                 if (vector[i] == '0')
                 {
                     scnf += "(";
-                    if (x == false)
-                        scnf += "x v";
-                    else
-                        scnf += "!x v";
-                    if (y == false)
-                        scnf += " y v";
-                    else
-                        scnf += " !y v";
-                    if (z == false)
-                        scnf += " z";
-                    else
-                        scnf += " !z";
+                    scnf += x == false ? "x v" : "!x v";
+                    scnf += y == false ? " y v" : " !y v";
+                    scnf += z == false ? " z" : " !z";
 
                     if (lenght == 16)
                     {
-                        if (t == false)
-                            scnf += " v t";
-                        else
-                            scnf += " v !t";
+                        scnf += t == false ? " v t" : " v !t";
                     }
 
 

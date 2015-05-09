@@ -38,7 +38,7 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Введите ответ:" Font-Names="Schadow BT" Font-Size="Larger"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Width="400px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">00000000</asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Width="400px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">xyzt V !xyz!t</asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f;	/*font-family:'';*/ font-size:16px; 

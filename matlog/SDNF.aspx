@@ -29,7 +29,7 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Введите ответ:" Visible="False" Font-Names="Schadow BT" Font-Size="Larger"></asp:Label>
         <br />
-&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Visible="False" Width="402px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">(X V Y V Z V T)(!X V !Y)</asp:TextBox>
+&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Visible="False" Width="402px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">(x v y v z v t)(!x v !y)</asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f;	/*font-familY:'';*/ font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 

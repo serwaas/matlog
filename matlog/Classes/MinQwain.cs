@@ -175,7 +175,7 @@ namespace matlog
                 if (chair[0] == '1')
                     S[i] += 'x';
                 if (chair[1] == '0')
-                    S[i] += "!Y";
+                    S[i] += "!y";
                 if (chair[1] == '1')
                     S[i] += 'y';
                 if (chair[2] == '0')
