@@ -139,6 +139,15 @@ namespace matlog {
         protected global::System.Web.UI.WebControls.Panel Panel8;
         
         /// <summary>
+        /// RadioButtonList1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        
+        /// <summary>
         /// RadioButtonList2 элемент управления.
         /// </summary>
         /// <remarks>

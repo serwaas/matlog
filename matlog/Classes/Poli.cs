@@ -28,10 +28,10 @@ namespace matlog
 
         private int[] CalculateCoefficients(string s)
         {
-            var a = new int[8];
-            a = s.Select(w => Convert.ToInt32(w)%2).ToArray();
+            var a = s.Select(w => Convert.ToInt32(w)%2).ToArray();
             //for (var i = 0; i < 8; i++)
             //    a[i] = Convert.ToInt32(s[i])%2;
+
             var coeff = new int[8];
             coeff[7] = a[0];
             coeff[6] = coeff[7] + a[1];

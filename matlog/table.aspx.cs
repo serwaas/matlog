@@ -30,7 +30,7 @@ namespace matlog
             TextBox2.Visible = true;
             Label1.Visible = true;
             Button2.Visible = true;
-            TextBox1.Text = RandFunq.Operate(RadioButtonList2.SelectedValue, "3");//(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);
+            TextBox1.Text = RandFunq.Operate(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);//(RadioButtonList2.SelectedValue, "3");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -39,56 +39,35 @@ namespace matlog
             var ta = new Formula();
 
             var s1 = "";
-           // if (RadioButtonList1.SelectedValue == "2")
-            for (var x = 0; x < 2; x++)
-                for (var y = 0; y < 2; y++)
-                    for (var z = 0; z < 2; z++)
+            if (RadioButtonList1.SelectedValue == "3")
+                for (var x = 0; x < 2; x++)
+                    for (var y = 0; y < 2; y++)
+                        for (var z = 0; z < 2; z++)
+                        {
+                            ta.SetVariable("x", x != 0);
+                            ta.SetVariable("y", y != 0);
+                            ta.SetVariable("z", z != 0);
+
+                            s1 += ta.Operate(s).acc == false ? "0" : "1";
+                        }
+            else
+                for (var x = 0; x < 2; x++)
+                    for (var y = 0; y < 2; y++)
                     {
+
                         ta.SetVariable("x", x != 0);
                         ta.SetVariable("y", y != 0);
-                        ta.SetVariable("z", z != 0);
+
 
                         s1 += ta.Operate(s).acc == false ? "0" : "1";
+
+
                     }
-            //else
-            //    for (int x = 0; x < 2; x++)
-            //        for (int Y = 0; Y < 2; Y++)
-                        
-            //            {
-
-            //                if (x == 0)
-            //                {
-            //                    ta.setVariable("X", false);
-            //                    ta.setVariable("x", false);
-            //                }
-            //                else
-            //                {
-            //                    ta.setVariable("X", true);
-            //                    ta.setVariable("x", true);
-            //                }
-            //                if (Y == 0)
-            //                {
-            //                    ta.setVariable("Y", false);
-            //                    ta.setVariable("Y", false);
-            //                }
-            //                else
-            //                {
-            //                    ta.setVariable("Y", true);
-            //                    ta.setVariable("Y", true);
-            //                }
-                            
-
-            //                if (ta.operate(s).acc == false)
-            //                    s1 += "0";
-            //                else
-            //                    s1 += "1";
-
-
-            //            }
-            string answer = TextBox2.Text;
+            var answer = TextBox2.Text;
            
-            int err=0;
-            var count = Math.Pow(2,3);//Convert.ToInt32(RadioButtonList1.SelectedValue));
+            var err=0;
+            var deg = Convert.ToInt32(RadioButtonList1.SelectedValue);
+            var count = Math.Pow(2,deg);//Convert.ToInt32(RadioButtonList1.SelectedValue));
             if (answer.Length == count)
             {
                 for (var  i = 0; i < count; i++)

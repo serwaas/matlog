@@ -19,7 +19,7 @@ namespace matlog
 
             var rnd = new Random();
             var s1 = "";
-            if (RadioButtonList3.SelectedValue == "1")//vector
+            if (RadioButtonList3.SelectedValue == "1") //vector
             {
                 s1 = RandFunq.Operate(RadioButtonList2.SelectedValue, "3");
             }
@@ -27,24 +27,20 @@ namespace matlog
             {
                 for (var i = 0; i < 4; i++)
                 {
-                    if (rnd.Next(2) == 1)
-                        s1 += "1";
-                    else s1 += "0";
+                    s1 += rnd.Next(2) == 1 ? "1" : "0";
                 }
-                
-                    for (var i = 0; i < 4; i++)
-                    {
-                        if (rnd.Next(2) == 1)
-                            s1 += "1";
-                        else s1 += "0";
-                    }
-                
+
+                for (var i = 0; i < 4; i++)
+                {
+                    s1 += rnd.Next(2) == 1 ? "1" : "0";
+                }
+
             }
-                TextBox1.Text = s1;
-                TextBox1.Visible = true;
-                TextBox2.Visible = true;
-                Label1.Visible = true;
-                Button2.Visible = true;
+            TextBox1.Text = s1;
+            TextBox1.Visible = true;
+            TextBox2.Visible = true;
+            Label1.Visible = true;
+            Button2.Visible = true;
 
 
                     
