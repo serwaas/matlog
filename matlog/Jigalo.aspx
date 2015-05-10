@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Jigalo.aspx.cs" Inherits="matlog.Jigalo" %>
 
 <!DOCTYPE html>
-<link href="../CSS/MainStyle.css" rel="stylesheet" />
+<link href="CSS/MainStyle.css" rel="stylesheet" />
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

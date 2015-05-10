@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Qwain.aspx.cs" Inherits="matlog.Qwain" %>
 
-<link href="../CSS/MainStyle.css" rel="stylesheet" />
+<link href="CSS/MainStyle.css" rel="stylesheet" />
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

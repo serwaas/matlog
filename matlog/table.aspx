@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="table.aspx.cs" Inherits="matlog.WebForm1" StyleSheetTheme="" %>
-<link href="../CSS/MainStyle.css" rel="stylesheet" />
+<link href="CSS/MainStyle.css" rel="stylesheet" />
 
 <!DOCTYPE html>
 

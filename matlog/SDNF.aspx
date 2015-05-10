@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SDNF.aspx.cs" Inherits="matlog.SDNF" %>
-<link href="../CSS/MainStyle.css" rel="stylesheet" />
+<link href="CSS/MainStyle.css" rel="stylesheet" />
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
