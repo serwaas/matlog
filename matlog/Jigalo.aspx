@@ -68,16 +68,16 @@
 <ul>
     <li><h3>Настройки</h3>
         <div>
-            <%--Количество переменных<br />
+            Количество переменных<br />
             <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                 
                 <asp:ListItem Value="2" >Две</asp:ListItem>
                 <asp:ListItem Value="3" Selected="True">Три</asp:ListItem>
             </asp:RadioButtonList>
-            <br />--%>
+            <br />
             Количество Операций<br />
             <asp:RadioButtonList ID="RadioButtonList2" runat="server">
-                <%--<asp:ListItem Value="1" Selected="True">Одна</asp:ListItem>--%>
+                <asp:ListItem Value="1" Selected="True">Одна</asp:ListItem>
                 <asp:ListItem Value="2" Selected="True">Две</asp:ListItem>
                 <asp:ListItem Value="3">Три</asp:ListItem>
             </asp:RadioButtonList>
