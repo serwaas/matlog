@@ -36,27 +36,8 @@
 &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f;	/*font-familY:'';*/ font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 
                   Text="OK" Visible="False" Height="35px" Width="35px" />
-            &nbsp;<asp:Panel ID="Panel1" runat="server" Height="6px" style="margin-left: 90px" Width="8px">
-                <asp:Panel ID="Panel2" runat="server" Height="6px" style="margin-left: 8px" Width="8px">
-                    <asp:Panel ID="Panel3" runat="server" Height="6px" style="margin-left: 8px" Width="8px">
-                        <asp:Panel ID="Panel4" runat="server" Height="6px" style="margin-left: 8px" Width="8px">
-                            <asp:Panel ID="Panel5" runat="server" Height="6px" style="margin-left: 8px" Width="8px">
-                                <asp:Panel ID="Panel6" runat="server" Height="6px" style="margin-left: 8px; " Width="8px">
-                                    <asp:Panel ID="Panel7" runat="server" Height="6px" style="margin-left: 8px" Width="8px">
-                                        <asp:Panel ID="Panel8" runat="server" Height="6px" style="margin-left: 8px" Width="16px">
-                                            <asp:Panel ID="Panel9" runat="server" Height="6px" style="margin-left: 8px" Width="16px">
-                                                <asp:Panel ID="Panel10" runat="server" Height="6px" style="margin-left: 8px" Width="16px">
-                                                    
-                                                </asp:Panel>
-                                            </asp:Panel>
-                                        </asp:Panel>
-                                    </asp:Panel>
-                                </asp:Panel>
-                            </asp:Panel>
-                        </asp:Panel>
-                    </asp:Panel>
-                </asp:Panel>
-            </asp:Panel>
+            &nbsp;
+           
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
             

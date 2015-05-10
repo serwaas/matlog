@@ -18,8 +18,8 @@ namespace matlog
         {
             var rnd = new Random();
             var s1 = "";
-
-            for (var i = 0; i < 8; i++)
+            var count = RadioButtonList1.SelectedValue == "3" ? 8 : 16;
+            for (var i = 0; i < count; i++)
             {
                 s1 += rnd.Next(2) == 1 ? "1" : "0";
             }
