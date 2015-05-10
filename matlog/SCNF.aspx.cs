@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matlog
 {
-    public partial class SCNF : System.Web.UI.Page
+    public partial class SCNF : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +27,7 @@ namespace matlog
             TextBox1.Text = s1;
             TextBox1.Visible = true;
             TextBox2.Visible = true;
-           // TextBox3.Visible = true;
+           
             Label1.Visible = true;
             Button2.Visible = true;
         }
@@ -71,8 +68,7 @@ namespace matlog
 
 
             var sdnf = DNF.SDNF(length, s);
-            var splitScnf = sdnf.Split(' ', 'v').Where(w => w != "").ToArray();
-            //string SCNF = DNF.SCNF(length, s);
+            var splitScnf = sdnf.Split(' ', 'v').Where(w => w != "").ToArray(); 
             var splitAnswer = answer.Split(' ','v','V').Where(w => w != "").Select(ww=>ww.ToLower()).ToArray();
             var isCorrect = splitAnswer.Length == splitScnf.Length;
 
@@ -84,9 +80,6 @@ namespace matlog
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);
                 
-            
-               
-            
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)

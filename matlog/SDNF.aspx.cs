@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace matlog
 {
-    public partial class SDNF : System.Web.UI.Page
+    public partial class SDNF : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +24,7 @@ namespace matlog
             TextBox1.Text = s1;
             TextBox1.Visible = true;
             TextBox2.Visible = true;
-            //TextBox3.Visible = true;
+           
             Label1.Visible = true;
             Button2.Visible = true;
         }
@@ -68,11 +65,8 @@ namespace matlog
             }
 
 
-            //string scnf = DNF.SDNF(length, s);
             var scnf = DNF.SCNF(length, s);
-
             var splitSdnf = scnf.Split('(', ')').Where(w => w != "").ToArray();
-            ////string SCNF = DNF.SCNF(length, s);
             var splitAnswer = answer.Split('(', ')').Where(w => w != "").Select(ww => ww.ToLower()).ToArray();
             var isCorrect = splitAnswer.Length == splitSdnf.Length;
 

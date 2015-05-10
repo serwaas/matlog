@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-
 namespace matlog
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm1 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +25,7 @@ namespace matlog
             TextBox2.Visible = true;
             Label1.Visible = true;
             Button2.Visible = true;
-            TextBox1.Text = RandFunq.Operate(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);//(RadioButtonList2.SelectedValue, "3");
+            TextBox1.Text = RandFunq.Operate(RadioButtonList2.SelectedValue, RadioButtonList1.SelectedValue);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -67,7 +62,7 @@ namespace matlog
            
             var err=0;
             var deg = Convert.ToInt32(RadioButtonList1.SelectedValue);
-            var count = Math.Pow(2,deg);//Convert.ToInt32(RadioButtonList1.SelectedValue));
+            var count = Math.Pow(2,deg);
             if (answer.Length == count)
             {
                 for (var  i = 0; i < count; i++)

@@ -23,7 +23,7 @@
             
         <div id ="head">
             
-         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click"  style="margin-left: 91px; width:200px; color:#1a419f;	/*font-family:'';*/ font-size:16px; 
+         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click"  style="margin-left: 91px; width:200px; color:#1a419f; font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 
                                     Text="Сгенерировать функцию" Font-Names="Comic Sans MS" Font-Size="Medium" />
             <a href="index.html"><div class ="but">Меню</div></a>
@@ -41,34 +41,14 @@
         <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Width="400px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">xyzt V !xyz!t</asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f;	/*font-family:'';*/ font-size:16px; 
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f; font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 
                                                                          Text="OK" Height="35px" Width="35px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
             
             </div>
-      <%-- <div class="verticalaccordion">
-<ul>
-    <li><h3>Настройки</h3>
-        <div>Количество переменных<br />
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                
-                <asp:ListItem Value="2" Selected="True">Две</asp:ListItem>
-                <asp:ListItem Value="3">Три</asp:ListItem>
-            </asp:RadioButtonList>
-            <br />
-            Количество Операций<br />
-            <asp:RadioButtonList ID="RadioButtonList2" runat="server">
-                <asp:ListItem Value="1" Selected="True">Одна</asp:ListItem>
-                <asp:ListItem Value="2">Две</asp:ListItem>
-                <asp:ListItem Value="3">Три</asp:ListItem>
-            </asp:RadioButtonList>
-            </div>
-    </li>
-    
-</ul>
-</div>--%>
+     
             </div>
 
     </div>

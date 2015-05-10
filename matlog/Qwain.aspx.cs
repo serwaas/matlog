@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace matlog
 {
-    public partial class Qwain : System.Web.UI.Page
+    public partial class Qwain : Page
     {
-       public  int[] Y;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -18,17 +15,13 @@ namespace matlog
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Y = new int[16];
+          
              var rnd = new Random();
-             var boom="";
-             for (var i = 0; i < 16; i++)
-             {
-                 var ch= rnd.Next(2);
-                 Y[i] = ch;
-                 boom += Y[i];
-             }
+             var text="";
+            for (var i = 0; i < 16; i++)
+                text += rnd.Next(2);
 
-             TextBox1.Text = boom;
+            TextBox1.Text = text;
              
         }
         protected void Button2_Click(object sender, EventArgs e)
@@ -43,22 +36,26 @@ namespace matlog
                 return;
             }
             var mq = new MinQwain();
-            Y =  new int[16];
+            var y =  new int[16];
             var isCorrect=true;
             var input = TextBox1.Text;
             if (input.Length != 16)
                 isCorrect = false;
             if (isCorrect)
                 for (var i = 0; i < 16; i++)
-                    if (input[i] == '1')
-                        Y[i] = 1;
-                   else if (input[i] == '0')
-                       Y[i] = 0;
-                   else
-                   {
-                       isCorrect = false;
-                       break;
-                   }
+                    switch (input[i])
+                    {
+                        case  '1':
+                            y[i] = 1;
+                            break;
+                        case '0':
+                            y[i] = 0;
+                            break;
+                        default:
+                            isCorrect = false;
+                            break;
+                    }
+                    
 
             if (!isCorrect)
             {
@@ -69,7 +66,7 @@ namespace matlog
                 return;
             }
 
-            var s = mq.Minimize(Y);
+            var s = mq.Minimize(y);
 
             var answer = TextBox2.Text;
             var splitAnswer =  answer.Split(' ','v', 'V').Where(w=>w!="").Select(ww=>ww.ToLower()).ToArray();

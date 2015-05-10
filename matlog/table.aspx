@@ -23,7 +23,7 @@
             <div id="logo"></div>
         <div id ="head">
             
-         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="margin-left: 91px; width:200px; color:#1a419f;	/*font-family:'';*/ font-size:16px; 
+         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="margin-left: 91px; width:200px; color:#1a419f;	font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 
               Text="Сгенерировать функцию" Font-Names="Comic Sans MS" Font-Size="Medium" />
         <a href="index.html"><div class ="but">Меню</div></a>
@@ -41,22 +41,7 @@
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="margin-left: 20px;  color:#1a419f;	/*font-family:'';*/ font-size:16px; 
                                                                                  background-color:#cccccc; padding:3px;  margin:2px;border:1px solid #666666; margin-bottom: 16px" 
              Text="OK" Visible="False" Height="35px" Width="35px" />
-&nbsp;&nbsp;<%--<asp:Panel ID="Panel1" runat="server" Height="6px" style="margin-left: 90px" Width="8px">
-                <asp:Panel ID="Panel2" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                    <asp:Panel ID="Panel3" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                        <asp:Panel ID="Panel4" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                            <asp:Panel ID="Panel5" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                                <asp:Panel ID="Panel6" runat="server" Height="6px" style="margin-left: 9px; " Width="8px">
-                                    <asp:Panel ID="Panel7" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                                        <asp:Panel ID="Panel8" runat="server" Height="6px" style="margin-left: 9px" Width="8px">
-                                        </asp:Panel>
-                                    </asp:Panel>
-                                </asp:Panel>
-                            </asp:Panel>
-                        </asp:Panel>
-                    </asp:Panel>
-                </asp:Panel>
-            </asp:Panel>--%>
+&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
             

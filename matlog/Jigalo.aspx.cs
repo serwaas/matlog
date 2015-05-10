@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.UI; 
 
 namespace matlog
 {
-    public partial class Jigalo : System.Web.UI.Page
+    public partial class Jigalo : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,15 +36,12 @@ namespace matlog
             Label1.Visible = true;
             Button2.Visible = true;
 
-
-                    
-            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             var s1 = "";
-            var components = new string[3];
+            string[] components;
             if (RadioButtonList3.SelectedValue == "1")
             {
                 var s = TextBox1.Text;
@@ -95,9 +89,7 @@ namespace matlog
                     isCorrect = false;
            
 
-
-            
-            var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :( " + s1 + " \");";
+            var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :( \");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);
         }
