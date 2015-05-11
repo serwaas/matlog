@@ -48,8 +48,8 @@ namespace matlog
             coeff[5] = coeff[7] + a[2];
             coeff[4] = coeff[7] + a[4];
             coeff[3] = coeff[7] + coeff[6] + coeff[5] + a[3];
-            coeff[2] = coeff[4] + coeff[6] + a[5];
-            coeff[1] = coeff[4] + coeff[5] + a[6];
+            coeff[2] = coeff[4] + coeff[6] + coeff[7] + a[5];
+            coeff[1] = coeff[4] + coeff[5] + coeff[7] + a[6];
             coeff[0] = coeff[1] + coeff[2] + coeff[3] + coeff[4] + coeff[5] +
                              coeff[6] + coeff[7] + a[7];
 
