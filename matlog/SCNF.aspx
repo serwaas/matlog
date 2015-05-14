@@ -24,7 +24,7 @@
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server" Height="28px" style="margin-left: 89px" Visible="False" Width="234px" Font-Names="Schadow BT" Font-Size="Larger">0</asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" Height="28px" style="margin-left: 89px" Visible="False" Width="234px" Font-Names="Schadow BT" Font-Size="Larger" ReadOnly="True">0</asp:TextBox>
         <br />
         <br />
         <asp:Label ID="Label1" runat="server" Text="Введите ответ:" Visible="False" Font-Names="Schadow BT" Font-Size="Larger"></asp:Label>
@@ -37,9 +37,7 @@
             &nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-            <asp:TextBox ID="TextBox3" runat="server" style="margin-left: 88px; margin-top: 17px; margin-bottom: 1px;" Visible="False" Width="675px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox2_TextChanged">xYz+xY+Yz+xz+x+Y+z+1</asp:TextBox>
-    
-            
+                        
             
     
             

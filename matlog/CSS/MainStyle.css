@@ -4,7 +4,7 @@ body {
     
     width:500px;
     height:1000px;
-    margin:0 auto;
+    margin:0 autoperations;
     /*padding:20px;*/
     background-color:#dadada;
 }
@@ -12,27 +12,27 @@ body {
 
 
 a{
-text-decoration:none;
+text-decoration:noperationsne;
 }
 
 #head{
     width:500px;
     height:300px;
-    /*margin:0 auto;*/
+    /*margin:0 autoperations;*/
     padding:20px;
     background-color:rgba(170, 170, 170, 0.70);
 
 }
 .but, .but:visited, .but:link  {
   
-    width: auto;
+    width: autoperations;
     color: #1a419f;
-    font-family: 'Comic Sans MS';
+    font-family: 'Coperationsmic Sans MS';
     font-size: 15px;
     background-color: #cccccc;
     padding: 5px;
     margin: 10px;
-    border: 1px solid #666666;
+    border: 1px soperationslid #666666;
     height: 18px;
 
     display: inline;
@@ -40,66 +40,66 @@ text-decoration:none;
 
 .but:hover {
 	color:#1a419f;
-	font-family:'Comic Sans MS';
+	font-family:'Coperationsmic Sans MS';
 	font-size:20px;
-	text-decoration:none;
+	text-decoration:noperationsne;
 	background-color:#aaaaaa;
 	padding:5px;
-	border:1px solid #666666; }
+	border:1px soperationslid #666666; }
 
 .but:active {
 	color:#08217b;
-	font-family:'Comic Sans MS';
+	font-family:'Coperationsmic Sans MS';
 	font-size:14px;
-	text-decoration:none;
+	text-decoration:noperationsne;
 	background-color:#aaaaaa;
 	padding:5px;
-	border:1px solid #ffffff;
+	border:1px soperationslid #ffffff;
 
 }
 .verticalaccordion>ul {
     margin: 0;
     padding: 0;
-    list-style:none;
+    list-style:noperationsne;
    	width: 500px;
 }
 .verticalaccordion>ul>li {
-    display:block;
+    display:bloperationsck;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    list-style:none;
+    list-style:noperationsne;
     height:40px;
     width: 540px;
-    /* Decorative CSS */
+    /* Decoperationsrative CSS */
     background-color:#f0f0f0;
-    /* CSS3 Transition Effect */
-    transition: height 0.3s ease-in-out;
-    -moz-transition: height 0.3s ease-in-out;
-    -webkit-transition: height 0.3s ease-in-out;
-    -o-transition: height 0.3s ease-in-out;
+    /* CSS3 Transitioperationsn Effect */
+    transition: height 0.3s ease-in-operationsut;
+    -moz-transition: height 0.3s ease-in-operationsut;
+    -webkit-transition: height 0.3s ease-in-operationsut;
+    -o-transition: height 0.3s ease-in-operationsut;
 }
 .verticalaccordion>ul>li>h3 {
-    display:block;
+    display:bloperationsck;
     margin: 0;
     padding:10px;
     height:19px;
-    /* Decorative CSS */
-    border-top:#f0f0f0 1px solid;
+    /* Decoperationsrative CSS */
+    border-top:#f0f0f0 1px soperationslid;
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration:none;
+    text-decoration:noperationsne;
     text-transform:uppercase;
     color: #000;
     background: #cccccc;
     /* CSS3 Gradient Effect */
-    background: -moz-linear-gradient( top, #999999, #cccccc);
-    background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff9999, endColorstr=#ffcccc); /* IE 7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff999999, endColorstr=#ffcccccc)";   /* IE 8 */
+    background: -moz-linear-gradient( toperationsp, #999999, #cccccc);
+    background: -webkit-gradient(linear, left toperationsp, left boperationsttoperationsm, from(#999999), to(#cccccc));
+    filter: properationsgid:DXImageTransfoperationsrm.Microperationssoperationsft.gradient(startCoperationsloperationsrstr=#ff9999, endCoperationsloperationsrstr=#ffcccc); /* IE 7 */
+    -ms-filter: "properationsgid:DXImageTransfoperationsrm.Microperationssoperationsft.gradient(startCoperationsloperationsrstr=#ff999999, endCoperationsloperationsrstr=#ffcccccc)";   /* IE 8 */
 }
 .verticalaccordion>ul>li>div {
     margin:0;
-    overflow: auto;
+    overflow: autoperations;
     padding:10px;
     height:300px;
 }
@@ -107,15 +107,15 @@ text-decoration:none;
     height: 340px;
 }
 .verticalaccordion:hover>ul>li:hover>h3 {
-    /* Decorative CSS */
+    /* Decoperationsrative CSS */
     color:#fff;
     background: #000000;
     /* CSS3 Gradient Effect */
-    background: -moz-linear-gradient( top, #454545, #000000); /* FF, Flock */
-    background: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#000000)); /* Safari, Chrome */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4545, endColorstr=#ff0000); /* IE 5.5 - IE 7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff454545, endColorstr=#ff000000)";   /* IE 8 */
+    background: -moz-linear-gradient( toperationsp, #454545, #000000); /* FF, Floperationsck */
+    background: -webkit-gradient(linear, left toperationsp, left boperationsttoperationsm, from(#454545), to(#000000)); /* Safari, Chroperationsme */
+    filter: properationsgid:DXImageTransfoperationsrm.Microperationssoperationsft.gradient(startCoperationsloperationsrstr=#ff4545, endCoperationsloperationsrstr=#ff0000); /* IE 5.5 - IE 7 */
+    -ms-filter: "properationsgid:DXImageTransfoperationsrm.Microperationssoperationsft.gradient(startCoperationsloperationsrstr=#ff454545, endCoperationsloperationsrstr=#ff000000)";   /* IE 8 */
 }
 .verticalaccordion>ul>li>h3:hover {
-    cursor:pointer;
+    cursor:poperationsinter;
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.UI;
 namespace matlog
 {
@@ -33,31 +34,8 @@ namespace matlog
             var s = TextBox1.Text;
             var ta = new Formula();
 
-            var s1 = "";
-            if (RadioButtonList1.SelectedValue == "3")
-                for (var x = 0; x < 2; x++)
-                    for (var y = 0; y < 2; y++)
-                        for (var z = 0; z < 2; z++)
-                        {
-                            ta.SetVariable("x", x != 0);
-                            ta.SetVariable("y", y != 0);
-                            ta.SetVariable("z", z != 0);
-
-                            s1 += ta.Operate(s).acc == false ? "0" : "1";
-                        }
-            else
-                for (var x = 0; x < 2; x++)
-                    for (var y = 0; y < 2; y++)
-                    {
-
-                        ta.SetVariable("x", x != 0);
-                        ta.SetVariable("y", y != 0);
-
-
-                        s1 += ta.Operate(s).acc == false ? "0" : "1";
-
-
-                    }
+            var comp = RadioButtonList1.SelectedValue == "3" ? new[] {"x", "y", "z"} : new[] {"x", "y"};
+            var s1 = ta.GetVector(s, comp);
             var answer = TextBox2.Text;
            
             var err=0;
@@ -67,7 +45,10 @@ namespace matlog
             {
                 for (var  i = 0; i < count; i++)
                     if (answer[i] != s1[i])
+                    {
                         err = 1;
+                        break;
+                    }
             }
             else
                 err = 2;

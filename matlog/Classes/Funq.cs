@@ -5,82 +5,71 @@ using System.Web;
 
 namespace matlog
 {
+    public static class Lol
+    {
+        public static bool IsEqual(string[] answerOfUser, string[] correctAnswer)
+        {
+            return answerOfUser.Length == correctAnswer.Length && !answerOfUser.Any(s => correctAnswer.All(w => s != w));
+        }
+    }
     public class Funq
     {
-        public string[] perem;
-        public string[] oper;
-        public string funq;
-        public Funq(string valP)
+        public string[] _values;
+        public string[] _operations;
+        public string _function;
+
+        public Funq(string numOfValues)
         {
-            perem = valP =="3" ? new [] { "x", "!z", "!x", "y", "z", "!y" } : new [] { "x",  "!x", "y",  "!y" };
-            oper = new [] { "*", "V", "->", "<->" };
-            funq = "";
+            _values = numOfValues =="3" ? new [] { "x", "!z", "!x", "y", "z", "!y" } : new [] { "x",  "!x", "y",  "!y" };
+            _operations = new [] { "*", "V", "->", "<->" };
+            _function = "";
         }
         
-        public Funq(string[] p, string[] o, string f)
+        public Funq(string[] values, string[] operations, string function)
         {
-            perem = new string[p.Length];
-            for (var i = 0; i < p.Length; i++)
+            _values = new string[values.Length];
+            for (var i = 0; i < values.Length; i++)
             {
-                perem[i] = p[i];
+                _values[i] = values[i];
             }
-            oper = new string[o.Length];
-            for (var i = 0; i < o.Length; i++)
+            _operations = new string[operations.Length];
+            for (var i = 0; i < operations.Length; i++)
             {
-                oper[i] = o[i];
+                _operations[i] = operations[i];
             }
-            funq = f;
+            _function = function;
         }
 
         public Funq(Funq other)
         {
-            perem = new string[other.perem.Length];
-            for (var i = 0; i < perem.Length; i++)
+            _values = new string[other._values.Length];
+            for (var i = 0; i < _values.Length; i++)
             {
-                perem[i] = other.perem[i];
+                _values[i] = other._values[i];
             }
-            oper = new string[other.oper.Length];
-            for (var i = 0; i < oper.Length; i++)
+            _operations = new string[other._operations.Length];
+            for (var i = 0; i < _operations.Length; i++)
             {
-                oper[i] = other.oper[i];
+                _operations[i] = other._operations[i];
             }
-            funq = other.funq;
+            _function = other._function;
         }
 
-        public void DelPer(int p)
+        public void DeleteValue(int value)
         {
-            var newPerem = new string[perem.Length - 1];
+            var newValues = new string[_values.Length - 1];
 
-            for (int i = 0, j = 0; i < newPerem.Length; ++i, ++j)
+            for (int i = 0, j = 0; i < newValues.Length; ++i, ++j)
             {
-                if (j == p)
+                if (j == value)
                     ++j;
 
-                newPerem[i] = perem[j];
+                newValues[i] = _values[j];
             }
-            perem = new string[newPerem.Length];
-            for (var j = 0; j < perem.Length; j++)
-                perem[j] = newPerem[j];
-            //Funq result = new Funq(newPerem, oper, funq);
-            //return result;
-
+            _values = new string[newValues.Length];
+            for (var j = 0; j < _values.Length; j++)
+                _values[j] = newValues[j];
+           
         }
-        /*public void delOp(int o)
-        {
-            string[] newOper = new string[oper.Length - 1];
-            for (int i = 0, j = 0; i < newOper.Length; ++i, ++j)
-            {
-                if (j == o)
-                    ++j;
-
-                newOper[i] = oper[j];
-            }
-            oper = new string[newOper.Length];
-            for (int i = 0; i < newOper.Length; ++i)
-            {
-                oper[i] = newOper[i];
-            }
-
-        }*/
     }
 }

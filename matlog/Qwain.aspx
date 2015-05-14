@@ -32,7 +32,7 @@
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server" Height="28px" style="margin-left: 140px" Width="346px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox1_TextChanged">0000000000000000</asp:TextBox>
+        <asp:TextBox ID="TextBox1" runat="server" Height="28px" style="margin-left: 140px" Width="346px" Font-Names="Schadow BT" Font-Size="Larger" OnTextChanged="TextBox1_TextChanged" ReadOnly="True">0000000000000000</asp:TextBox>
 &nbsp;&nbsp;&nbsp;
         <br />
         <br />

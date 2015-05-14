@@ -35,46 +35,18 @@ namespace matlog
             var err = 0;
             
             var length = s.Length;
-            string script;
-            var answer = TextBox2.Text;
-            if ((length == 8) || (length == 16))
-            {
-                for (var i = 0; i < length; i++)
-                {
-                    if (!((s[i] == '0') || (s[i] == '1')))
-                        err = 1;
-                }
-            }
-            else
-                err = 2;
             
-            switch (err)
-            {
-                case 1:
-                    script = "alert(\"Вектор должен состоять из '0' и '1'\");";
-
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                        "MSGbox", script, true);
-                    return;
-                case 2:
-                    script = "alert(\"Неверная длина исходного вектора\");";
-
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                        "MSGbox", script, true);
-                    return;
-            }
-
-
+            var answer = TextBox2.Text;
+            
             var scnf = DNF.SCNF(length, s);
             var splitSdnf = scnf.Split('(', ')').Where(w => w != "").ToArray();
             var splitAnswer = answer.Split('(', ')').Where(w => w != "").Select(ww => ww.ToLower()).ToArray();
-            var isCorrect = splitAnswer.Length == splitSdnf.Length;
+            //var isCorrect = splitAnswer.Length == splitSdnf.Length;
 
-            if (isCorrect)
-                foreach (var str in splitAnswer.Where(str => splitSdnf.All(w => w != str)))
-                   isCorrect = false;
-
-            script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";
+            //if (isCorrect)
+            //    isCorrect = Lol.IsEqual(splitAnswer, splitSdnf);
+            var isCorrect = Lol.IsEqual(splitAnswer, splitSdnf);
+            var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);
                

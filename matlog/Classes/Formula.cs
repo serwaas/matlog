@@ -16,6 +16,33 @@ namespace matlog
             error = 0;
         }
 
+        public string GetVector(string formula, string[] vars)
+        {
+            var res = "";
+            if (vars.Length < 2 || vars.Length > 3) return res;
+            if (vars.Length == 3)
+                for (var x = 0; x < 2; x++)
+                    for (var y = 0; y < 2; y++)
+                        for (var z = 0; z < 2; z++)
+                        {
+                            SetVariable(vars[0], x != 0);
+                            SetVariable(vars[1], y != 0);
+                            SetVariable(vars[2], z != 0);
+
+                            res += Operate(formula).acc == false ? "0" : "1";
+                        }
+            else
+                for (var x = 0; x < 2; x++)
+                    for (var y = 0; y < 2; y++)
+                    {
+                        SetVariable(vars[0], x != 0);
+                        SetVariable(vars[1], y != 0);
+
+                        res += Operate(formula).acc == false ? "0" : "1";
+                    }
+            return res;
+        }
+
         public void SetVariable(string name, bool value)
         {
             variables.Add(name, value);
@@ -24,9 +51,7 @@ namespace matlog
         public Result Operate(string s)
         {
             var result = Equiv(s);
-            //variables.Remove("X");
-            //variables.Remove("Y");
-            //variables.Remove("Z");
+
             variables.Remove("x");
             variables.Remove("y");
             variables.Remove("z");
@@ -73,7 +98,7 @@ namespace matlog
         {
             var f = "";
 
-            // ищем название функции или переменной
+            // ищем название переменной
             // имя обязательно должна начинаться с буквы
             if ((s.Length != 0) && (Char.IsLetter(s[0])))
             {
@@ -87,13 +112,11 @@ namespace matlog
 
             error = 3;
             return new Result(false, "");
-            /* error = true;
-             return new Result(false, "");*/
+            
         }
 
         private Result Implic(string s)
         {
-            //Result current = Bracket(s);
             var current = Or(s);
             var acc = current.acc;
 
@@ -114,7 +137,7 @@ namespace matlog
 
         private Result Or(string s)
         {
-            //Result current = Bracket(s);
+
             var current = And(s);
             var acc = current.acc;
 
@@ -133,7 +156,7 @@ namespace matlog
 
         private Result And(string s)
         {
-            //Result current = Bracket(s);
+
             var current = No(s);
             var acc = current.acc;
 
@@ -151,8 +174,7 @@ namespace matlog
 
         private Result No(string s)
         {
-            Result current; //= Bracket(s);
-            //Result current = and(s);
+            Result current;
             if (s[0] == '!')
             {
                 current = Bracket(s.Substring(1));
@@ -161,7 +183,7 @@ namespace matlog
             else
                 current = Bracket(s);
 
-            var acc = current.acc;
+            var newAcc = current.acc;
 
             while (true)
             {
@@ -173,8 +195,8 @@ namespace matlog
 
                 var next = current.rest.Substring(1);
                 current = Bracket(next);
-                acc = !current.acc;
-                current = new Result(acc, current.rest);
+                newAcc = current.acc = !current.acc;
+                current = new Result(newAcc = current.acc, current.rest);
             }
         }
     }

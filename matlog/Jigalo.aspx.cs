@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Web.UI; 
+using System.Web.UI;
+using NUnit.Framework;
 
 namespace matlog
 {
@@ -46,32 +47,37 @@ namespace matlog
             {
                 var s = TextBox1.Text;
                 components =
-                    s.Split(' ', '(', ')', '<', '-', '>', 'V', 'v', '*','!').Where(w => w != "").OrderBy(r => r).Distinct().ToArray();
+                    s.Split(' ', '(', ')', '<', '-', '>', 'V', 'v', '*', '!')
+                        .Where(w => w != "")
+                        .OrderBy(r => r)
+                        .Distinct()
+                        .ToArray();
                 var ta = new Formula();
-                if (components.Length == 3)
-                {
-                    for (var x = 0; x < 2; x++)
-                        for (var y = 0; y < 2; y++)
-                            for (var z = 0; z < 2; z++)
-                            {
-                                ta.SetVariable("x", x != 0);
-                                ta.SetVariable("y", y != 0);
-                                ta.SetVariable("z", z != 0);
+                s1 = ta.GetVector(s, components);
+                //if (components.Length == 3)
+                //{
+                //    for (var x = 0; x < 2; x++)
+                //        for (var y = 0; y < 2; y++)
+                //            for (var z = 0; z < 2; z++)
+                //            {
+                //                ta.SetVariable("x", x != 0);
+                //                ta.SetVariable("y", y != 0);
+                //                ta.SetVariable("z", z != 0);
 
-                                s1 += ta.Operate(s).acc == false ? "0" : "1";
-                            }
-                }
-                else
-                {
-                    for (var x = 0; x < 2; x++)
-                        for (var y = 0; y < 2; y++)
-                        {
-                            ta.SetVariable(components[0], x != 0);
-                            ta.SetVariable(components[1], y != 0);
+                //                s1 += ta.Operate(s).acc == false ? "0" : "1";
+                //            }
+                //}
+                //else
+                //{
+                //    for (var x = 0; x < 2; x++)
+                //        for (var y = 0; y < 2; y++)
+                //        {
+                //            ta.SetVariable(components[0], x != 0);
+                //            ta.SetVariable(components[1], y != 0);
 
-                            s1 += ta.Operate(s).acc == false ? "0" : "1";
-                        }
-                }
+                //            s1 += ta.Operate(s).acc == false ? "0" : "1";
+                //        }
+                //}
             }
             else
             {
@@ -83,12 +89,10 @@ namespace matlog
             var answer = TextBox2.Text;
             var splitAnswer = answer.Split(' ', '+').Where(w => w != "").Select(ww=>ww.ToLower()).ToArray();
             
-            var isCorrect = poll.Length == splitAnswer.Length;
-            if (isCorrect)
-                foreach (var str in splitAnswer.Where(str => poll.All(w => w != str)))
-                    isCorrect = false;
-           
-
+            //var isCorrect = poll.Length == splitAnswer.Length;
+            //if (isCorrect)
+            //    isCorrect = Lol.IsEqual(splitAnswer, poll);
+            var isCorrect = Lol.IsEqual(splitAnswer, poll);
             var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :( \");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);

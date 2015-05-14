@@ -37,46 +37,18 @@ namespace matlog
             var err = 0;
             var s = TextBox1.Text;
             var length = s.Length;
-            string script;
-            var answer = TextBox2.Text;
-            if ((length == 8) || (length == 16))
-            {
-                for (var i = 0; i < length; i++)
-                {
-                    if (!((s[i] == '0') || (s[i] == '1')))
-                        err = 1;
-                }
-            }
-            else
-                err = 2;
             
-            switch (err)
-            {
-                case 1:
-                    script = "alert(\"Вектор должен состоять из '0' и '1'\");";
-
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                        "MSGbox", script, true);
-                    return;
-                case 2:
-                    script = "alert(\"Неверная длина исходного вектора\");";
-
-                    ScriptManager.RegisterStartupScript(this, GetType(),
-                        "MSGbox", script, true);
-                    return;
-            }
-
+            var answer = TextBox2.Text;
 
             var sdnf = DNF.SDNF(length, s);
             var splitScnf = sdnf.Split(' ', 'v').Where(w => w != "").ToArray(); 
             var splitAnswer = answer.Split(' ','v','V').Where(w => w != "").Select(ww=>ww.ToLower()).ToArray();
-            var isCorrect = splitAnswer.Length == splitScnf.Length;
+            //var isCorrect = splitAnswer.Length == splitScnf.Length;
+            //if (isCorrect)
+            //    isCorrect = Lol.IsEqual(splitAnswer, splitScnf);
 
-            if (isCorrect)
-                foreach (var str in splitAnswer.Where(str => splitScnf.All(w => w != str)))
-                    isCorrect = false;
-            
-            script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";
+            var isCorrect = Lol.IsEqual(splitAnswer, splitScnf);
+            var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);
                 
