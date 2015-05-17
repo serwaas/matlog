@@ -45,7 +45,7 @@ namespace matlog
 
             //if (isCorrect)
             //    isCorrect = Lol.IsEqual(splitAnswer, splitSdnf);
-            var isCorrect = Lol.IsEqual(splitAnswer, splitSdnf);
+            var isCorrect = Funq.IsEqual(splitAnswer, splitSdnf);
             var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :(\");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);

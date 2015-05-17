@@ -5,18 +5,13 @@ using System.Web;
 
 namespace matlog
 {
-    public static class Lol
-    {
-        public static bool IsEqual(string[] answerOfUser, string[] correctAnswer)
-        {
-            return answerOfUser.Length == correctAnswer.Length && !answerOfUser.Any(s => correctAnswer.All(w => s != w));
-        }
-    }
+    
     public class Funq
     {
         public string[] _values;
         public string[] _operations;
         public string _function;
+
 
         public Funq(string numOfValues)
         {
@@ -70,6 +65,12 @@ namespace matlog
             for (var j = 0; j < _values.Length; j++)
                 _values[j] = newValues[j];
            
+        }
+
+
+        public static bool IsEqual(string[] answerOfUser, string[] correctAnswer)
+        {
+            return answerOfUser.Length == correctAnswer.Length && !answerOfUser.Any(s => correctAnswer.All(w => s != w));
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.UI;
-using NUnit.Framework;
+
 
 namespace matlog
 {
@@ -92,7 +92,7 @@ namespace matlog
             //var isCorrect = poll.Length == splitAnswer.Length;
             //if (isCorrect)
             //    isCorrect = Lol.IsEqual(splitAnswer, poll);
-            var isCorrect = Lol.IsEqual(splitAnswer, poll);
+            var isCorrect = Funq.IsEqual(splitAnswer, poll);
             var script = isCorrect ? "alert(\"Все верно\");" : "alert(\"Неправильно :( \");";
             ScriptManager.RegisterStartupScript(this, GetType(),
                                   "MSGbox", script, true);

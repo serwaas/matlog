@@ -8,11 +8,6 @@ namespace matlog
     public static class RandFunq
     {
 
-        
-        
-        /// <param name="numOfOperations">Число операций</param>
-        /// <param name="numOfValues">Число переменных</param>
-       
         public static string Operate(string numOfOperations, string numOfValues)
         {
             var func = new Funq(numOfValues);
