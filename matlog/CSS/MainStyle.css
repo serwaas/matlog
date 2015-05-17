@@ -4,7 +4,7 @@ body {
     
     width:500px;
     height:1000px;
-    margin:0 autoperations;
+    margin:0 auto;
     /*padding:20px;*/
     background-color:#dadada;
 }
@@ -12,13 +12,13 @@ body {
 
 
 a{
-text-decoration:noperationsne;
+text-decoration:none;
 }
 
 #head{
     width:500px;
     height:300px;
-    /*margin:0 autoperations;*/
+    margin:0 auto;
     padding:20px;
     background-color:rgba(170, 170, 170, 0.70);
 
@@ -32,7 +32,7 @@ text-decoration:noperationsne;
     background-color: #cccccc;
     padding: 5px;
     margin: 10px;
-    border: 1px soperationslid #666666;
+    border: 1px solid #666666;
     height: 18px;
 
     display: inline;
